@@ -6,18 +6,28 @@ import { Graphic1Component } from './graphic1/graphic1.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { IncreaserComponent } from '../components/increaser/increaser.component';
+import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { ChartComponent } from '../components/chart/chart.component';
+
 
 @NgModule({
     declarations: [
         DashboardComponent,
         ProgressComponent,
         Graphic1Component,
-        PagesComponent
+        PagesComponent,
+        IncreaserComponent,
+        ChartComponent
+
     ],
     imports: [
         CommonModule,
         SharedModule,
-        PagesRoutingModule
+        PagesRoutingModule,
+        FormsModule,
+        ChartsModule
     ],
     exports: [
         DashboardComponent,
@@ -29,3 +39,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 })
 
 export class PagesModule {}
+
+
+
+
+
