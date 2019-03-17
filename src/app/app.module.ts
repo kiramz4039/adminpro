@@ -11,6 +11,11 @@ import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { ServiceModule } from './services/service.module';
+
+// Services
+
+
 
 
 @NgModule({
@@ -22,7 +27,8 @@ import { RegisterComponent } from './login/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

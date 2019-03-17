@@ -10,6 +10,7 @@ import { IncreaserComponent } from '../components/increaser/increaser.component'
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from '../components/chart/chart.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ChartComponent } from '../components/chart/chart.component';
         Graphic1Component,
         PagesComponent,
         IncreaserComponent,
-        ChartComponent
+        ChartComponent,
+        AccountSettingsComponent
 
     ],
     imports: [
