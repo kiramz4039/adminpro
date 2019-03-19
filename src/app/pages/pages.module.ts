@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from '../components/chart/chart.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         PagesComponent,
         IncreaserComponent,
         ChartComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromisesComponent,
+        RxjsComponent
 
     ],
     imports: [
