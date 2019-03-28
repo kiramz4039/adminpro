@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { ServiceModule } from './services/service.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 
@@ -28,7 +29,9 @@ import { ServiceModule } from './services/service.module';
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    ServiceModule
+    ServiceModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
