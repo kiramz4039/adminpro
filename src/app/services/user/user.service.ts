@@ -5,6 +5,7 @@ import { URL_SERVICES } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { map } from 'rxjs/internal/operators/map';
 import { Router } from '@angular/router';
+import { UploadFileService } from '../uploadFile/upload-file.service';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class UserService {
   user: User;
   token: string;
 
-  constructor(public http: HttpClient, public router: Router) {
+  constructor(public http: HttpClient, public router: Router, public uploadFileService: UploadFileService) {
     this.getStorage();
   }
 
@@ -84,9 +85,32 @@ export class UserService {
                 }));
   }
 
+  updateUser(user: User) {
+    let url = URL_SERVICES + '/user/' + user._id + '?token=' + this.token;
+    return this.http.put(url, user)
+                    .pipe(map((response: any) => {
+                      this.setStorage(response.user._id, this.token, user);
+                      Swal.fire('Usuario actualizado', user.name, 'success');
+                      return true;
+                    }));
+  }
+
 
   // Saber si está logueado
   loggedOn() {
     return (this.token.length > 5) ? true : false;
   }
+
+  changeImage(file: File , id: string ) {
+    this.uploadFileService.uploadFile(file, 'users', id)
+                          .then((response: any) => {
+                             this.user.img = response.user.img;
+                             Swal.fire('Imagen actualizada', this.user.name, 'success');
+                             this.setStorage(id, this.token, this.user);
+                          })
+                          .catch( response => {
+                            console.log(response);
+                          });
+  }
+
 }

@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graphic1Component } from './graphic1/graphic1.component';
 import { PagesComponent } from './pages.component';
-import { SharedModule } from '../shared/shared.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { IncreaserComponent } from '../components/increaser/increaser.component';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +12,10 @@ import { ChartComponent } from '../components/chart/chart.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { SharedModule } from '../shared/shared.module';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         ChartComponent,
         AccountSettingsComponent,
         PromisesComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
 
     ],
     imports: [
@@ -33,7 +37,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         SharedModule,
         PagesRoutingModule,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule
     ],
     exports: [
         DashboardComponent,
